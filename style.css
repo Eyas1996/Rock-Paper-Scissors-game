@@ -8,11 +8,17 @@ The designs were created to the following widths:
 - Desktop: 1440px */
 :root {
   /* ### Primary */
-  --Scissors-Gradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
-  --Paper-Gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
-  --Rock-Gradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
-  --Lizard-Gradient: hsl(261, 73%, 60%), hsl(261, 72%, 63%);
-  --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+  --main-color: #fcfcfc;
+  --main-Scissors: hsl(39, 89%, 49%);
+  --secondary-Scissors: hsl(29deg 75% 43%);
+  --main-Paper: hsl(230, 89%, 62%);
+  --secondary-Paper: hsl(229, 64%, 46%);
+  --main-Rock: hsl(349, 71%, 52%);
+  --secondary-Rock: hsl(349 73% 35%);
+  --main-Lizard: hsl(261, 72%, 63%);
+  --secondary-Lizard: hsl(261deg 82% 58%);
+  --main-spock: hsl(189, 59%, 53%);
+  --secondary-spock: hsl(189deg 100% 34%);
 
   /* ### Neutral */
   --Dark-Text: hsl(229, 25%, 31%);
@@ -32,25 +38,26 @@ The designs were created to the following widths:
 }
 body {
   background: linear-gradient(var(--Radial-Gradient));
-  color: #fff;
+  color: var(--main-color);
   margin: 0;
   font-size: 18px;
   font-family: "Barlow", Manrope;
 }
 .container {
-  padding-top: 60px;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+/* Start Step One  */
 .container header {
   min-width: 830px;
   padding: 20px 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #fcfcfc;
+  border: 1px solid var(--main-color);
   box-shadow: 0px 0px 10px 2px #3665c3e8;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -58,21 +65,20 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-
 .container header .title {
   display: flex;
   flex-direction: column;
-  box-shadow: -5px 5px 4px 0px #fff;
+  box-shadow: -5px 5px 4px 0px var(--main-color);
 }
 .container header .title h1 {
   text-transform: uppercase;
-  line-height: 33px;
-  font-size: 2.5rem;
+  line-height: 26px;
+  font-size: 2rem;
 }
 .container header .score-section {
-  background-color: #fcfcfc;
+  background-color: var(--main-color);
   color: red;
-  padding: 20px 50px 0px;
+  padding: 15px 35px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,32 +89,41 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-
 .container header .score-section span:first-child {
   color: var(--Score-Text);
-  margin-bottom: -10px;
-  font-size: 1.1rem;
+  margin-bottom: -20px;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 .container header .score-section .score {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: -9px;
   color: var(--Dark-Text);
 }
-.container main {
-  padding: 95px;
+.container .step-one {
+  padding: 50px;
+  /* display: none; */
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 800px;
   justify-content: center;
-  gap: 50px 85px;
   align-items: center;
 }
-.container main button {
-  background-color: #fff;
+.container .step-one .box-two {
+  display: flex;
+  gap: 225px;
+}
+.container .step-one .box-three {
+  display: flex;
+  gap: 60px;
+  margin-top: 60px;
+}
+.container section button {
+  background-color: var(--main-color);
   width: 175px;
   height: 175px;
   padding: 10px;
@@ -122,7 +137,7 @@ body {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
-.container main button::after {
+.container .step-one button::after {
   content: "";
   position: absolute;
   background-color: hsl(235deg 50% 15%);
@@ -130,61 +145,192 @@ body {
   height: 15px;
   z-index: -4;
 }
-.container main .paper {
-  border-color: hsl(230, 89%, 62%);
-  box-shadow: inset 1px 6px 2px 3px hsl(226deg 22% 77%),
-    1px 8px 2px 0px hsl(229, 64%, 46%);
-  /* background: linear-gradient(var(--Paper-Gradient)); */
-}
-.container main .paper:hover {
-  box-shadow: 0px 0px 10px 10px #0b63d4d4;
-}
-.container main .paper::after {
-  top: 85px;
-  left: 135px;
-}
-.container main .scissors {
-  border-color: hsl(39, 89%, 49%);
+/****** scissors ******/
+.container section .scissors {
+  border-color: var(--main-Scissors);
   box-shadow: inset 1px 6px 2px 3px #0e0e0e24,
-    1px 8px 2px 0px hsl(29deg 75% 43%);
+    1px 8px 2px 0px var(--secondary-Scissors);
   /* background: linear-gradient(var(--Scissors-Gradient)); */
 }
-.container main .scissors:hover {
-  box-shadow: 0px 0px 10px 10px #ac7f20ed;
+.container .step-one .scissors:hover {
+  box-shadow: 0px 0px 10px 10px var(--secondary-Scissors);
 }
-.container main .scissors::after {
-  top: 175px;
-  left: -75px;
-  transform: rotate(120deg);
-  -webkit-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  -o-transform: rotate(120deg);
+.container .step-one .scissors::after {
+  top: 150px;
+  left: -105px;
+  transform: rotate(138deg);
+  -webkit-transform: rotate(138deg);
+  -moz-transform: rotate(138deg);
+  -ms-transform: rotate(138deg);
+  -o-transform: rotate(138deg);
 }
-.container main .rock {
-  border-color: hsl(349, 71%, 52%);
-  box-shadow: inset 1px 6px 2px 3px #0e0e0e24, 1px 8px 2px 0px hsl(349 73% 35%);
+
+/****** spock ******/
+.container section .spock {
+  border-color: var(--main-spock);
+  box-shadow: inset 1px 6px 2px 3px #0e0e0e24,
+    1px 8px 2px 0px var(--secondary-spock);
+}
+.container .step-one .spock:hover {
+  box-shadow: 0px 0px 10px 10px var(--secondary-spock);
+}
+.container .step-one .spock::after {
+  top: 190px;
+  left: 50px;
+  transform: rotate(72deg);
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+}
+
+/****** paper ******/
+.container section .paper {
+  border-color: var(--main-Paper);
+  box-shadow: inset 1px 6px 2px 3px hsl(226deg 22% 77%),
+    1px 8px 2px 0px var(--secondary-Paper);
+  /* background: linear-gradient(var(--Paper-Gradient)); */
+}
+.container .step-one .paper:hover {
+  box-shadow: 0px 0px 10px 10px var(--secondary-Paper);
+}
+.container .step-one .paper::after {
+  top: -12px;
+  left: -89px;
+  transform: rotate(42deg);
+}
+
+/****** lizard ******/
+.container section .lizard {
+  border-color: var(--main-Lizard);
+  box-shadow: inset 1px 6px 2px 3px #0e0e0e24,
+    1px 8px 2px 0px var(--secondary-Lizard);
   /* background: linear-gradient(var(--Rock-Gradient)); */
 }
-.container main .rock:hover {
-  box-shadow: 0px 0px 10px 10px #ac2020ed;
+.container .step-one .lizard:hover {
+  box-shadow: 0px 0px 10px 10px var(--secondary-Lizard);
 }
-.container main .rock::after {
-  top: -70px;
-  left: -80px;
-  transform: rotate(120deg);
-  -webkit-transform: rotate(60deg);
-  -moz-transform: rotate(120deg);
-  -ms-transform: rotate(120deg);
-  -o-transform: rotate(120deg);
+.container .step-one .lizard::after {
+  top: 50px;
 }
-.container main button img {
+
+/****** rock ******/
+.container section .rock {
+  border-color: var(--main-Rock);
+  box-shadow: inset 1px 6px 2px 3px #0e0e0e24,
+    1px 8px 2px 0px var(--secondary-Rock);
+  /* background: linear-gradient(var(--Rock-Gradient)); */
+}
+.container .step-one .rock:hover {
+  box-shadow: 0px 0px 10px 10px var(--secondary-Rock);
+}
+.container .step-one .rock::after {
+  top: -25px;
+  left: 25px;
+  transform: rotate(110deg);
+}
+.container .step-one button img {
   padding: 20px;
   min-width: 95px;
 }
 
-/* .container footer {} */
-.container footer .rules {
+/* End Step One  */
+/* Start Step two Card  */
+.step-two {
+  display: none;
+  padding-top: 60px;
+}
+.step-two .title {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  gap: 160px;
+}
+.step-two .title h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.step-two .title h3:first-child {
+  margin-left: 35px;
+}
+.step-two .title h3:last-child {
+  margin-left: 155px;
+}
+.step-two .cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step-two .cards button {
+  width: 250px;
+  height: 250px;
+}
+.step-two .cards button:last-child {
+  margin-left: 60px;
+}
+.step-two .cards button img {
+  min-width: 100px;
+}
+.step-two .cards .result {
+  text-align: center;
+}
+.step-two .cards .result h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-left: 60px;
+}
+.step-two .cards .result button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 60px;
+  height: fit-content;
+  width: fit-content;
+  font-size: 1.5rem;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.step-two .cards .result button:hover {
+  background-color: #d1d1d1;
+}
+/* End Step two Card  */
+/* Start Rules Card  */
+.container .rules {
+  background-color: var(--main-color);
+  color: #000;
+  padding: 40px 40px 50px;
+  border-radius: 10px;
+  width: 560px;
+  box-shadow: 0 0 30px 190px #49476d33, inset 0px 0px 20px 0px #5a5a5a;
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.container .rules .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .rules .title h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--Dark-Text);
+}
+.container .rules .title button {
+  border: none;
+  background: none;
+  width: 0;
+  height: 0;
+}
+.container footer .rules-btn {
   position: fixed;
   bottom: 60px;
   right: 50px;
@@ -192,7 +338,7 @@ body {
   color: white;
   font-size: 1rem;
   padding: 10px 30px;
-  border: 1px solid #fcfcfc;
+  border: 1px solid var(--main-color);
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
@@ -207,6 +353,6 @@ body {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
-.container footer .rules:hover {
+.container footer .rules-btn:hover {
   box-shadow: 0px 0px 10px 2px #ffffff6b;
 }
