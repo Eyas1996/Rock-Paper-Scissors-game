@@ -8,7 +8,6 @@ The designs were created to the following widths:
 - Desktop: 1440px */
 :root {
   /* ### Primary */
-  --main-color: #fcfcfc;
   --main-Scissors: hsl(39, 89%, 49%);
   --secondary-Scissors: hsl(29deg 75% 43%);
   --main-Paper: hsl(230, 89%, 62%);
@@ -21,6 +20,7 @@ The designs were created to the following widths:
   --secondary-spock: hsl(189deg 100% 34%);
 
   /* ### Neutral */
+  --main-color: #fcfcfc;
   --Dark-Text: hsl(229, 25%, 31%);
   --Score-Text: hsl(229, 64%, 46%);
   --Header-Outline: hsl(217, 16%, 45%);
@@ -75,13 +75,16 @@ body {
   line-height: 26px;
   font-size: 2rem;
 }
-.container header .score-section {
+.container header .score-sections {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.container header .score-sections > div {
   background-color: var(--main-color);
-  color: red;
   padding: 15px 35px 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   text-align: center;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -89,15 +92,15 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-.container header .score-section span:first-child {
+.container header .score-sections > div span:first-child {
   color: var(--Score-Text);
-  margin-bottom: -20px;
+  margin-bottom: -15px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.container header .score-section .score {
+.container header .score-sections .score {
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: -9px;
@@ -105,13 +108,19 @@ body {
 }
 .container .step-one {
   padding: 50px;
-  /* display: none; */
+  /*display: none;
+  */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 800px;
   justify-content: center;
   align-items: center;
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -o-transition: 0.6s;
 }
 .container .step-one .box-two {
   display: flex;
@@ -261,7 +270,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.step-two .cards button {
+.step-two .cards > button {
+  visibility: hidden;
   width: 250px;
   height: 250px;
 }
@@ -272,6 +282,7 @@ body {
   min-width: 100px;
 }
 .step-two .cards .result {
+  visibility: hidden;
   text-align: center;
 }
 .step-two .cards .result h1 {
@@ -304,7 +315,6 @@ body {
   border-radius: 10px;
   width: 560px;
   box-shadow: 0 0 30px 190px #49476d33, inset 0px 0px 20px 0px #5a5a5a;
-  /* display: flex; */
   display: none;
   flex-direction: column;
   position: absolute;
@@ -356,3 +366,8 @@ body {
 .container footer .rules-btn:hover {
   box-shadow: 0px 0px 10px 2px #ffffff6b;
 }
+
+/* .anime {
+  box-shadow: 0 0 2px 20px rgb(255 255 255 / 70%),
+    0 0 2px 40px rgb(255 255 255 / 36%), 0 0 2px 60px rgb(255 255 255 / 70%);
+} */

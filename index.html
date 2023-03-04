@@ -21,9 +21,15 @@
         <h1>Lizard</h1>
         <h1>Spock</h1>
       </div>
-      <div class="score-section">
-        <span>score</span>
-        <span class="score">12</span>
+      <div class="score-sections">
+        <div class="my-score-section">
+          <span>My Score</span>
+          <span class="my-score score">0</span>
+        </div>
+        <div class="pc-score-section">
+          <span>Pc Score</span>
+          <span class="pc-score score">0</span>
+        </div>
       </div>
     </header>
     <section class="step-one">
@@ -55,27 +61,26 @@
         <h3>the House Picked</h3>
       </div>
       <div class="cards">
-        <button class="lizard">
-          <img src="./images/icon-lizard.svg" alt="Lizard" />
+        <button class="my-choice">
+          <img src="" alt="" />
         </button>
         <div class="result">
-          <h1>You Win!</h1>
-          <button>Try Again</button>
+          <h1 class="result-text">You ....</h1>
+          <button class="again">Play Again</button>
         </div>
-        <button class="rock">
-          <img src="./images/icon-rock.svg" alt="Rock" />
+        <button class="pc-choice">
+          <img src="" alt="" />
         </button>
       </div>
     </section>
-
     <section class="rules">
       <div class="title">
         <h1>rules</h1>
         <button class="close">
-          <img src="./images/icon-close.svg" alt="Close">
+          <img src="./images/icon-close.svg" alt="Close" />
         </button>
       </div>
-      <img src="./images/image-rules-bonus.svg" alt="Rules">
+      <img src="./images/image-rules-bonus.svg" alt="Rules" />
     </section>
     <footer>
       <button class="rules-btn">Rules</button>
